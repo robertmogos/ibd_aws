@@ -9,7 +9,7 @@ AWS.config.update({
 });
 
 app.get('/', function (req, res) {
-    res.send('Wow');
+    res.send('Wow - CI');
 });
 
 app.get('/users', function (req, res) {
