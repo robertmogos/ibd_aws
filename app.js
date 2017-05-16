@@ -4,7 +4,7 @@ var app = express();
 var AWS = require("aws-sdk");
 
 AWS.config.update({
-    region: "us-west-2"
+    region: process.env.DynamoDB_REGION
 });
 
 app.get('/', function (req, res) {
@@ -18,9 +18,10 @@ app.get('/users', function (req, res) {
 
 app.get('/user/:userId/:promo', function (req, res) {
 	var docClient = new AWS.DynamoDB.DocumentClient();
+	
 	var userId = req.params["userId"];
 	var promo = req.params["promo"];
-	
+
 	var params = {
     	TableName: "users",
     	Key: {
