@@ -20,13 +20,13 @@ app.get('/user/:userId/:promo', function (req, res) {
 	var docClient = new AWS.DynamoDB.DocumentClient();
 	var userId = req.params["userId"];
 	var promo = req.params["promo"];
-
+	
 	var params = {
-    	TableName: "users"//,
-    	// Key: {
-     //    	"userid": userId,
-     //    	"promo": promo
-    	// }
+    	TableName: "users",
+    	Key: {
+        	"userid": userId,
+        	"promo": promo
+    	}
 	};
 
 	docClient.get(params, function(err, data) {
