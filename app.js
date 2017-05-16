@@ -22,7 +22,7 @@ app.get('/user/:userId', function (req, res) {
 	var params = {
     	TableName: "users",
     	Key:{
-        	"userid": userId
+        	userid: userId
     	}
 	};
 
