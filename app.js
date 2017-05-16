@@ -7,6 +7,8 @@ AWS.config.update({
     region: process.env.DynamoDB_REGION
 });
 
+should fail
+
 app.get('/', function (req, res) {
     res.send('Wow - CI');
 });
